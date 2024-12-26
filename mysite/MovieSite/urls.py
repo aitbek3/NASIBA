@@ -1,5 +1,4 @@
 from tkinter.font import names
-
 from  rest_framework import routers
 from .views import *
 from django.urls import path, include
@@ -13,7 +12,7 @@ router.register(r'rating', RatingViewSet, basename='rating_list'),
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('movie/', MovieListAPIView.as_view(), name='movie_list'),
+    path('', MovieListAPIView.as_view(), name='movie_list'),
     path('movie/<int:pk>/', MovieDetailAPIView.as_view(), name='movie_detail'),
     path('users/', ProfileListAPIView.as_view(), name='user_list'),
     path('users/<int:pk>/', ProfileEditAPIView.as_view(), name='user_detail'),
